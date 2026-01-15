@@ -10,4 +10,9 @@ services:
       PGADMIN_DEFAULT_PASSWORD: '${PGADMIN_DEFAULT_PASSWORD}'
     ports:
       - '5051:80'
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
     restart: unless-stopped
+
+volumes:
+  pgadmin_data:
