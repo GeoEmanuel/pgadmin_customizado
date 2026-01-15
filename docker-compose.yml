@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  pgadmin:
+    build:
+      context: .
+      dockerfile: Dockerfile.pgadmin
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: '${PGADMIN_DEFAULT_EMAIL}'
+      PGADMIN_DEFAULT_PASSWORD: '${PGADMIN_DEFAULT_PASSWORD}'
+    ports:
+      - '5051:80'
+    restart: unless-stopped
